@@ -16,9 +16,9 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 #RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_ed25519_key  -N ''
 RUN echo 'root:root' | chpasswd
 
-RUN sed -ri 's/HostKey /etc/ssh/ssh_host_rsa_key/#HostKey /etc/ssh/ssh_host_rsa_key/g' /etc/ssh/sshd_config
-RUN sed -ri 's/HostKey /etc/ssh/ssh_host_ecdsa_key/#HostKey /etc/ssh/ssh_host_ecdsa_key/g' /etc/ssh/sshd_config
-RUN sed -ri 's/HostKey /etc/ssh/ssh_host_ed25519_key/#HostKey /etc/ssh/ssh_host_ed25519_key/g' /etc/ssh/sshd_config
+RUN sed -ri 's/HostKey \/etc\/ssh\/ssh_host_rsa_key/#HostKey \/etc\/ssh\/ssh_host_rsa_key/g' /etc/ssh/sshd_config
+RUN sed -ri 's/HostKey \/etc\/ssh\/ssh_host_ecdsa_key/#HostKey \/etc\/ssh\/ssh_host_ecdsa_key/g' /etc/ssh/sshd_config
+RUN sed -ri 's/HostKey \/etc\/ssh\/ssh_host_ed25519_key/#HostKey \/etc\/ssh\/ssh_host_ed25519_key/g' /etc/ssh/sshd_config
 #HostKey /etc/ssh/ssh_host_rsa_key
 #HostKey /etc/ssh/ssh_host_ecdsa_key
 #HostKey /etc/ssh/ssh_host_ed25519_key
