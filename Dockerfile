@@ -1,4 +1,4 @@
-FROM centos/systemd
+FROM centos
 MAINTAINER "Hiroki Takeyama"
 
 # timezone
@@ -9,9 +9,9 @@ RUN ln -fs /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 RUN sed -i -e "s/KEYMAP=\(.*\)/KEYMAP=jp106/g"  /etc/vconsole.conf
 
 # sshd
-RUN yum -y install openssh-server; yum clean all; systemctl enable sshd.service
+RUN yum -y install openssh-server; yum clean all
 RUN echo 'root:root' | chpasswd
 
 EXPOSE 22
 
-CMD ["/usr/sbin/init"]
+CMD ["sshd", "-D"]
