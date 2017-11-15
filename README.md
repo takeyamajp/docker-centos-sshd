@@ -1,3 +1,3 @@
-FROM centos/systemd
+FROM centos
 
 MAINTAINER "Hiroki Takeyama"
