@@ -10,6 +10,7 @@ RUN sed -i -e "s/KEYMAP=\(.*\)/KEYMAP=jp106/g"  /etc/vconsole.conf
 
 # sshd
 RUN yum -y install openssh-server; yum clean all
+RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN echo 'root:root' | chpasswd
 
 EXPOSE 22
