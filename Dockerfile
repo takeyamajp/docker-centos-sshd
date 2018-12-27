@@ -6,7 +6,7 @@ RUN rm -f /etc/localtime; \
     ln -fs /usr/share/zoneinfo/Asia/Tokyo /etc/localtime;
 
 # keymap
-RUN sed -i -e "s/KEYMAP=\(.*\)/KEYMAP=jp106/g" /etc/vconsole.conf;
+RUN sed -i "s/KEYMAP=\(.*\)/KEYMAP=jp106/g" /etc/vconsole.conf;
 
 # sshd
 RUN yum -y install openssh-server; yum clean all; \
