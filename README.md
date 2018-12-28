@@ -1,4 +1,8 @@
 FROM centos  
 MAINTAINER "Hiroki Takeyama"
 
+ENV TIMEZONE Asia/Tokyo
+
+ENV KEYMAP jp106
+
 EXPOSE 22
