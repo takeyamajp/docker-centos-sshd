@@ -1,13 +1,6 @@
 FROM centos
 MAINTAINER "Hiroki Takeyama"
 
-# timezone
-RUN rm -f /etc/localtime; \
-    ln -fs /usr/share/zoneinfo/Asia/Tokyo /etc/localtime;
-
-# keymap
-RUN sed -i "s/KEYMAP=\(.*\)/KEYMAP=jp106/g" /etc/vconsole.conf;
-
 # sshd
 RUN yum -y install openssh-server; yum clean all; \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config; \
@@ -15,6 +8,21 @@ RUN yum -y install openssh-server; yum clean all; \
     ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -N '' && \
     ssh-keygen -t dsa -f /etc/ssh/ssh_host_ed25519_key  -N ''; \
     echo 'root:root' | chpasswd;
+
+# entrypoint
+RUN { \
+    echo '#!/bin/bash -eu'; \
+    echo 'rm -f /etc/localtime'; \
+    echo 'ln -fs /usr/share/zoneinfo/${TIMEZONE} /etc/localtime'; \
+    echo 'sed -i "s/KEYMAP=.*/KEYMAP=${KEYMAP}/g" /etc/vconsole.conf'; \
+    echo 'exec "$@"'; \
+    } > /usr/local/bin/entrypoint.sh; \
+    chmod +x /usr/local/bin/entrypoint.sh;
+ENTRYPOINT ["entrypoint.sh"]
+
+ENV TIMEZONE Asia/Tokyo
+
+ENV KEYMAP jp106
 
 EXPOSE 22
 
