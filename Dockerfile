@@ -14,15 +14,12 @@ RUN { \
     echo '#!/bin/bash -eu'; \
     echo 'rm -f /etc/localtime'; \
     echo 'ln -fs /usr/share/zoneinfo/${TIMEZONE} /etc/localtime'; \
-    echo 'sed -i "s/KEYMAP=.*/KEYMAP=${KEYMAP}/g" /etc/vconsole.conf'; \
     echo 'exec "$@"'; \
     } > /usr/local/bin/entrypoint.sh; \
     chmod +x /usr/local/bin/entrypoint.sh;
 ENTRYPOINT ["entrypoint.sh"]
 
 ENV TIMEZONE Asia/Tokyo
-
-ENV KEYMAP jp106
 
 EXPOSE 22
 
