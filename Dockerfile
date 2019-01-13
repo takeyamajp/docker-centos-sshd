@@ -26,4 +26,4 @@ ENV ROOT_PASSWORD root
 
 EXPOSE 22
 
-CMD ["sshd", "-D"]
+CMD ["/usr/sbin/sshd", "-D"]
