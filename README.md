@@ -9,4 +9,6 @@
     
     ENV TIMEZONE Asia/Tokyo
     
+    ENV ROOT_PASSWORD root
+    
     EXPOSE 22
