@@ -3,6 +3,11 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/takeyamajp/centos-sshd.svg)](https://hub.docker.com/r/takeyamajp/centos-sshd/)
 [![license](https://img.shields.io/github/license/takeyamajp/docker-centos-sshd.svg)](https://github.com/takeyamajp/docker-centos-sshd/blob/master/LICENSE)
 
+### Supported tags and respective Dockerfile links  
+- [`latest`, `centos8`](https://github.com/takeyamajp/docker-centos-sshd/blob/master/centos8/Dockerfile)
+- [`centos7`](https://github.com/takeyamajp/docker-centos-sshd/blob/master/centos7/Dockerfile)
+
+### Image summary
     FROM centos:centos8  
     MAINTAINER "Hiroki Takeyama"
     
