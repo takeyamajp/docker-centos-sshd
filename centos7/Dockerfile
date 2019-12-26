@@ -18,7 +18,7 @@ RUN { \
     echo 'exec "$@"'; \
     } > /usr/local/bin/entry_point.sh; \
     chmod +x /usr/local/bin/entry_point.sh;
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entry_point.sh"]
 
 ENV TIMEZONE Asia/Tokyo
 
