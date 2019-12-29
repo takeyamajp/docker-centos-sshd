@@ -3,7 +3,7 @@ MAINTAINER "Hiroki Takeyama"
 
 # sshd
 RUN dnf -y install openssh-server; \
-    sed -i 's/^\(UsePAM\s*yes\)/# \1/' /etc/ssh/sshd_config; \
+    sed -i 's/^\(UsePAM yes\)/# \1/' /etc/ssh/sshd_config; \
     ssh-keygen -q -t rsa -b 2048 -f /etc/ssh/ssh_host_rsa_key -N '' && \
     ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -N '' && \
     ssh-keygen -t dsa -f /etc/ssh/ssh_host_ed25519_key  -N ''; \
