@@ -12,7 +12,6 @@ RUN dnf -y install openssh-server; \
 # entrypoint
 RUN { \
     echo '#!/bin/bash -eu'; \
-    echo 'rm -f /etc/localtime'; \
     echo 'ln -fs /usr/share/zoneinfo/${TIMEZONE} /etc/localtime'; \
     echo 'echo "root:${ROOT_PASSWORD}" | chpasswd'; \
     echo 'exec "$@"'; \
