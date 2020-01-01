@@ -16,3 +16,12 @@
     ENV ROOT_PASSWORD root
     
     EXPOSE 22
+
+## How to use
+You can access this container using a SSH app or SFTP app.
+
+    docker run -d --name centos-sshd \  
+           -e TIMEZONE=Asia/Tokyo \  
+           -e ROOT_PASSWORD=root \  
+           -p 8023:22 \  
+           takeyamajp/centos-sshd
