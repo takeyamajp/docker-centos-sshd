@@ -3,11 +3,11 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/takeyamajp/centos-sshd.svg)](https://hub.docker.com/r/takeyamajp/centos-sshd/)
 [![license](https://img.shields.io/github/license/takeyamajp/docker-centos-sshd.svg)](https://github.com/takeyamajp/docker-centos-sshd/blob/master/LICENSE)
 
-### Supported tags and respective Dockerfile links  
+## Supported tags and respective Dockerfile links  
 - [`latest`, `centos8`](https://github.com/takeyamajp/docker-centos-sshd/blob/master/centos8/Dockerfile)
 - [`centos7`](https://github.com/takeyamajp/docker-centos-sshd/blob/master/centos7/Dockerfile)
 
-### Image summary
+## Image summary
     FROM centos:centos8  
     MAINTAINER "Hiroki Takeyama"
     
@@ -36,7 +36,7 @@ You can add extra ports and volumes as follows if you want.
            -v /my/own/datadir:/var/www/html \  
            takeyamajp/centos-sshd
 
-## Timezone
+## Time zone
 You can use any time zone that can be used in CentOS such as America/Chicago.  
 
 See below for zones.  
