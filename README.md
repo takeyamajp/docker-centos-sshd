@@ -18,7 +18,7 @@
     EXPOSE 22
 
 ## How to use
-You can access this container using a SSH app or SFTP app.
+This container can be accessed by SSH and SFTP clients.
 
     docker run -d --name centos-sshd \  
            -e TIMEZONE=Asia/Tokyo \  
