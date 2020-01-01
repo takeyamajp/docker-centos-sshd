@@ -26,7 +26,7 @@ This container can be accessed by SSH and SFTP clients.
            -p 8022:22 \  
            takeyamajp/centos-sshd
 
-You can add additional export ports and volumes as follows if you want.
+You can add extra ports and volumes as follows if you want.
 
     docker run -d --name centos-sshd \  
            -e TIMEZONE=Asia/Tokyo \  
