@@ -23,7 +23,17 @@ This container can be accessed by SSH and SFTP clients.
     docker run -d --name centos-sshd \  
            -e TIMEZONE=Asia/Tokyo \  
            -e ROOT_PASSWORD=root \  
-           -p 8023:22 \  
+           -p 8022:22 \  
+           takeyamajp/centos-sshd
+
+You can add additional export ports and volumes as follows if you want.
+
+    docker run -d --name centos-sshd \  
+           -e TIMEZONE=Asia/Tokyo \  
+           -e ROOT_PASSWORD=root \  
+           -p 8022:22 \  
+           -p 8080:80 \  
+           -v /my/own/datadir:/var/www/html \  
            takeyamajp/centos-sshd
 
 ## Timezone
