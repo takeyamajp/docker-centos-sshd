@@ -2,7 +2,7 @@ FROM centos:centos7
 MAINTAINER "Hiroki Takeyama"
 
 # sshd
-RUN yum -y install openssh-server; \
+RUN yum -y install openssh-server openssh-clients; \
     sed -i 's/^\(UsePAM yes\)/# \1/' /etc/ssh/sshd_config; \
     ssh-keygen -q -t rsa -b 2048 -f /etc/ssh/ssh_host_rsa_key -N '' && \
     ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -N '' && \

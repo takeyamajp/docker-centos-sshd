@@ -36,6 +36,10 @@ You can add extra ports and volumes as follows if you want.
            -v /my/own/datadir:/var/www/html \  
            takeyamajp/centos-sshd
 
+SCP command can be used for transferring files.
+
+    scp -P 8022 -r /my/own/httpd.conf root@localhost:/etc/httpd/conf/httpd.conf
+
 ## Time zone
 You can use any time zone such as America/Chicago that can be used in CentOS.  
 
