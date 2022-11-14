@@ -6,7 +6,7 @@ Star this repository if it is useful for you.
 
 ## Supported tags and respective Dockerfile links  
 - [`latest`, `centos8`](https://github.com/takeyamajp/docker-centos-sshd/blob/master/centos8/Dockerfile)  
-We have finished support to CentOS 8. So we recommend migrating to [Rocky Linux](https://github.com/takeyamajp/docker-rocky-sshd).
+We have finished support for CentOS 8. So we recommend migrating to [Rocky Linux](https://github.com/takeyamajp/docker-rocky-sshd).
 - [`centos7`](https://github.com/takeyamajp/docker-centos-sshd/blob/master/centos7/Dockerfile)
 
 ## Image summary
